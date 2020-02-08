@@ -76,7 +76,9 @@
     </div> <!-- End footer bottom area -->
    
     <!-- Latest jQuery form server -->
-    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery.min.js"></script>-->
+    <script src="vendor/components/jquery/jquery.min.js"></script>
+    
     
      <!-- Bootstrap JS form CDN -->
     <!--<script src="vendor/bootstrap-4.4.1/dist/js/bootstrap.min.js"></script>-->

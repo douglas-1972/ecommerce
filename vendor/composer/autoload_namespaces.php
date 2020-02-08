@@ -8,4 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Slim' => array($vendorDir . '/slim/slim'),
     'Rain' => array($vendorDir . '/rain/raintpl/library'),
+    'ComponentInstaller' => array($vendorDir . '/robloach/component-installer/src'),
+    'Assetic' => array($vendorDir . '/kriswallsmith/assetic/src'),
 );

@@ -6,7 +6,15 @@ namespace Composer\Autoload;
 
 class ComposerStaticInite037ff69f982fd91a49b56f3c79d8ab4
 {
+    public static $files = array (
+        'ce89ac35a6c330c55f4710717db9ff78' => __DIR__ . '/..' . '/kriswallsmith/assetic/src/functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Symfony\\Component\\Process\\' => 26,
+        ),
         'H' => 
         array (
             'Hcode\\' => 6,
@@ -14,6 +22,10 @@ class ComposerStaticInite037ff69f982fd91a49b56f3c79d8ab4
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Component\\Process\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
+        ),
         'Hcode\\' => 
         array (
             0 => __DIR__ . '/..' . '/hcodebr/php-classes/src',
@@ -33,6 +45,20 @@ class ComposerStaticInite037ff69f982fd91a49b56f3c79d8ab4
             'Rain' => 
             array (
                 0 => __DIR__ . '/..' . '/rain/raintpl/library',
+            ),
+        ),
+        'C' => 
+        array (
+            'ComponentInstaller' => 
+            array (
+                0 => __DIR__ . '/..' . '/robloach/component-installer/src',
+            ),
+        ),
+        'A' => 
+        array (
+            'Assetic' => 
+            array (
+                0 => __DIR__ . '/..' . '/kriswallsmith/assetic/src',
             ),
         ),
     );
