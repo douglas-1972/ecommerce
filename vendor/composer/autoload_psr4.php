@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'Hcode\\' => array($vendorDir . '/hcodebr/php-classes/src'),
 );
