@@ -23,7 +23,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="/admin/products/create" method="post">
+        <form role="form" action="/admin/products/create" method="post" enctype="multipart/form-data">
           <div class="box-body">
             <div class="form-group">
               <label for="desproduct">Nome da produto</label>
@@ -53,6 +53,15 @@
               <label for="desurl">URL</label>
               <input type="text" class="form-control" id="desurl" name="desurl">
             </div>
+            <div class="form-group">
+              <label for="file">Foto</label>
+              <input type="file" class="form-control" id="file" name="file">
+              <div class="box box-widget">
+                <div class="box-body">
+                  <img class="img-responsive" id="image-preview" src="/res/site/img/product.jpg" alt="Photo">
+                </div>
+            </div>
+              </div>
           </div>
           <!-- /.box-body -->
           <div class="box-footer">
@@ -67,3 +76,19 @@
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<script>
+document.querySelector('#file').addEventListener('change', function(){
+  
+  var file = new FileReader();
+
+  file.onload = function() {
+    
+    document.querySelector('#image-preview').src = file.result;
+
+  }
+
+  file.readAsDataURL(this.files[0]);
+
+});
+</script>

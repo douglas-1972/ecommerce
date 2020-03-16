@@ -13,7 +13,38 @@ class Product extends Model {
 
 		$sql = new Sql();
 
-		return $sql->select("SELECT * FROM tb_products ORDER BY desproduct");
+		$return_v = $sql->select("SELECT * FROM tb_products ORDER BY desproduct");
+
+		
+		$return_x = [];
+		foreach ($return_v as $row) {
+
+			if (file_exists(
+				$_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR .
+				"res" . DIRECTORY_SEPARATOR .
+				"site" . DIRECTORY_SEPARATOR .
+				"img" . DIRECTORY_SEPARATOR .
+				"products" . DIRECTORY_SEPARATOR .
+				$row["idproduct"] . ".jpg"
+				)) {
+
+				$url = "/res/site/img/products/" . $row["idproduct"] . ".jpg";
+			} else {
+
+				$url = "/res/site/img/product.jpg";
+			}
+
+			$return_m = [];
+			foreach ($row as $key => $value) {
+		    		$return_m += [$key=>$value];
+				}
+			$return_m += ["desphoto"=>$url];
+	
+			array_push($return_x, $return_m);
+			
+		}
+
+		return $return_x;
 	}
 
 	public function save()
