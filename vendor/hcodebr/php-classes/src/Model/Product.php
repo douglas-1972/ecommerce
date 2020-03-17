@@ -15,7 +15,7 @@ class Product extends Model {
 
 		$return_v = $sql->select("SELECT * FROM tb_products ORDER BY desproduct");
 
-		
+		/*
 		$return_x = [];
 		foreach ($return_v as $row) {
 
@@ -42,10 +42,22 @@ class Product extends Model {
 	
 			array_push($return_x, $return_m);
 			
+		}*/
+
+		return $return_v;
+	}
+
+	public static function checkList($list)
+	{
+		foreach ($list as &$row) {
+		    $p = new Product();		
+			$p->setData($row);
+			$row = $p->getValues();
 		}
 
-		return $return_x;
+		return $list;
 	}
+
 
 	public function save()
 	{

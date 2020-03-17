@@ -10,13 +10,10 @@ $app->get("/admin/products", function(){
 
 	$products = Product::listAll();
 
-	//var_dump($products);
-  //  exit;
-
 	$page = new PageAdmin();
 
 	$page->setTpl("products",[
-		"products"=>$products
+		"products"=>Product::checkList($products)
 	]);
 
 });
