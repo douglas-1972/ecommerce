@@ -180,7 +180,7 @@ class User extends Model {
 	));
 	}
 
-	public static function getForgot($email)
+	public static function getForgot($email, $inadmin = true)
 	{
 		$sql = new Sql();
 
@@ -211,7 +211,15 @@ class User extends Model {
 				$dataRecovery = $results2[0];
 
 				$code = base64_encode(openssl_encrypt($dataRecovery["idrecovery"], 'AES-128-CBC', User::SECRET, 0, User::SECRET_IV));
-				$link = "http://www.hcodecommerce.com.br:8086/admin/forgot/reset?code=$code";
+				if ($inadmin === true){
+
+					$link = "http://www.hcodecommerce.com.br:8086/admin/forgot/reset?code=$code";
+
+				} else {
+
+					$link = "http://www.hcodecommerce.com.br:8086/forgot/reset?code=$code";
+				}
+				
 
 				$mailer = new Mailer($data["desemail"], $data["desperson"], "Redefinir Senha da Hcode Store", "forgot",array(
 						"name"=>$data["desperson"],
