@@ -73,22 +73,22 @@
    
     <!-- Latest jQuery form server -->
     <!-- <script src="https://code.jquery.com/jquery.min.js"></script>-->
-    <script src="../vendor/components/jquery/jquery.min.js"></script>
+    <script src="../../vendor/components/jquery/jquery.min.js"></script>
     
     
      <!-- Bootstrap JS form CDN -->
    <!-- <script src="vendor/bootstrap-4.4.1/dist/js/bootstrap.min.js"></script>-->
-    <script src="../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
     
     <!-- jQuery sticky menu -->
-    <script src="../res/site/js/owl.carousel.min.js"></script>
-    <script src="../res/site/js/jquery.sticky.js"></script>
+    <script src="../../res/site/js/owl.carousel.min.js"></script>
+    <script src="../../res/site/js/jquery.sticky.js"></script>
     
     <!-- jQuery easing -->
-    <script src="../res/site/js/jquery.easing.1.3.min.js"></script>
+    <script src="../../res/site/js/jquery.easing.1.3.min.js"></script>
     
     <!-- Main Script -->
-    <script src="../res/site/js/main.js"></script>
+    <script src="../../res/site/js/main.js"></script>
     
     <!-- Slider -->
     <script type="text/javascript" src="../res/site/js/bxslider.min.js"></script>

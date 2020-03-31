@@ -209,6 +209,8 @@ class Cart extends Model {
 				'sCdAvisoRecebimento'=>'S'
 			]);
 
+			
+
 			$xml = simplexml_load_file("http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx/CalcPrecoPrazo?".$qs);
 
 			$result = $xml->Servicos->cServico;
@@ -222,7 +224,7 @@ class Cart extends Model {
 
 				Cart::clearMsgError();
 			}
-
+			
 			$this->setnrdays($result->PrazoEntrega);
 			$this->setvlfreight(Cart::formatValueToDecimal($result->Valor));
 			$this->setdeszipcode($nrzipcode);
@@ -247,14 +249,14 @@ class Cart extends Model {
 	public static function setMsgError($msg)
 	{
 
-		$_SESSION[Cart::SESSION_ERROR] = $msg;
+		$_SESSION[Cart::SESSION_ERROR] = utf8_encode($msg);
 
 	}
 
 	public static function getMsgError()
 	{
 
-		$msg = (isset($_SESSION[Cart::SESSION_ERROR])) ? $_SESSION[Cart::SESSION_ERROR] : "";
+		$msg = (isset($_SESSION[Cart::SESSION_ERROR])) ? utf8_decode($_SESSION[Cart::SESSION_ERROR]) : "";
 		
 		Cart::clearMsgError();
 

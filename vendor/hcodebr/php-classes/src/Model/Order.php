@@ -12,7 +12,7 @@ class Order extends Model {
 
 		$sql = new Sql();
 
-		$result = $sql->select("CALL sp_orders_save(:idorder, :idcart, :iduser, :idstatus, :idaddress, :vltotal)", [
+		$results = $sql->select("CALL sp_orders_save(:idorder, :idcart, :iduser, :idstatus, :idaddress, :vltotal)", [
 			':idorder'=>$this->getidorder(),
 			':idcart'=>$this->getidcart(),
 			':iduser'=>$this->getiduser(),
@@ -21,8 +21,8 @@ class Order extends Model {
 			':vltotal'=>$this->getvltotal()
 		]);
 
-		if (count($result) > 0){
-			$this->setData($result[0]);
+		if (count($results) > 0){
+			$this->setData($results[0]);
 		}
 	}
 
