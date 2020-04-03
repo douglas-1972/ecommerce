@@ -24,7 +24,7 @@ class Mailer {
 		$config = array(
 				"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/email/",
 				"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
-				"debug"         => false // set to false to improve the speed
+				"debug"         => true // set to false to improve the speed
 			);
 
         Tpl::configure( $config );
@@ -88,10 +88,10 @@ class Mailer {
 		$this->mail->msgHTML($html);
 
 		//Replace the plain text body with one created manually
-		$this->mail->AltBody = 'This is a plain-text message body';
+		//$this->mail->AltBody = 'This is a plain-text message body';
 
 		//Attach an image file
-		//$mail->addAttachment('images/phpmailer_mini.png');
+		//$this->mail->addAttachment('../../res/site/img/product-thumb-4.jpg');
 
 	}
 
